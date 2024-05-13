@@ -1,0 +1,94 @@
+name: tictactoe
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  auto_size_text: ^3.0.0
+  cached_network_image: ^3.3.1
+  custom_refresh_indicator: ^3.1.0
+  dartz: ^0.10.1
+  easy_mask: ^2.0.1
+  equatable: ^2.0.5
+  flextras: ^1.0.0
+  flutter_animate: ^4.5.0
+  flutter_modular: ^6.3.3
+  flutter_vibrate: ^1.3.0
+  gap: ^3.0.1
+  internet_connection_checker_plus: ^2.3.0
+  intl: ^0.18.1
+  loading_animation_widget: ^1.2.1
+  signals: ^5.2.1
+  toastification: ^2.0.0
+  url_launcher: ^6.2.6
+  flutter_svg: ^2.0.10+1
+  image_picker: ^1.1.1
+  encrypt_shared_preferences: ^0.7.1
+  flutter_dotenv: ^5.1.0
+  uni_links: ^0.5.1
+  flutter_native_splash: ^2.4.0
+  flutter_launcher_icons: ^0.13.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.2
+
+
+flutter_launcher_icons:
+  android: "fideliddade_ic"
+  ios: true
+
+  image_path: "assets/logo/android.png"
+  image_path_ios: "assets/logo/ios.png"
+  adaptive_icon_foreground: "assets/logo/android.png"
+  adaptive_icon_background: "#181C24"
+  remove_alpha_ios: true
+
+flutter_native_splash:
+  color: "#181C24"
+  android: true
+  ios: true
+  web: false
+
+  image: assets/native_splash.png
+  icon_background_color: "#181C24"
+  branding: assets/native_splash.png
+  branding_mode: bottom
+
+  android_12:
+    image: assets/native_splash.png
+    color: "#181C24"
+    icon_background_color: "#181C24"
+    branding: assets/native_splash.png
+
+
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/svgs/
+    - assets/images/
+    - .env
+
+
+  fonts:
+    - family: Segoe UI
+      fonts:
+        - asset: assets/fonts/Segoe/SegoeUI-Light.ttf
+          weight: 200
+        - asset: assets/fonts/Segoe/SegoeUI.ttf
+          weight: 400
+        - asset: assets/fonts/Segoe/SegoeUI-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Segoe/SegoeUI-Bold.ttf
+          weight: 700
+          
