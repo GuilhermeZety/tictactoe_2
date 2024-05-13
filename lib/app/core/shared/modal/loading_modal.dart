@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
 import 'package:tictactoe/app/ui/components/loader.dart';
 
 class LoadingModal extends StatelessWidget {
@@ -30,7 +31,7 @@ class LoadingModal extends StatelessWidget {
                 title,
                 style: const TextStyle(
                   fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: AppFonts.bold,
                   color: Colors.white,
                 ),
               ),

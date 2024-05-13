@@ -1,11 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:tictactoe/app/core/common/constants/app_colors.dart';
-import 'package:tictactoe/app/core/common/utils/vibrate.dart';
-import 'package:tictactoe/app/ui/components/panel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
+import 'package:tictactoe/app/core/common/constants/app_colors.dart';
+import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
+import 'package:tictactoe/app/core/common/utils/vibrate.dart';
+import 'package:tictactoe/app/ui/components/panel.dart';
 
 class SelectItemItem {
   final String title;
@@ -85,7 +86,7 @@ class SelectItem extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: selected(e) ? AppColors.white : AppColors.grey_600.withOpacity(0.5),
-                              fontWeight: FontWeight.bold,
+                              fontWeight: AppFonts.bold,
                             ),
                           ),
                         ),

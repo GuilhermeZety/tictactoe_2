@@ -1,10 +1,11 @@
 import 'dart:async';
 
-import 'package:tictactoe/app/core/common/constants/app_colors.dart';
-import 'package:tictactoe/app/core/common/extensions/widget_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
+import 'package:tictactoe/app/core/common/constants/app_colors.dart';
+import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 
 class Input extends StatefulWidget {
   final String? label;
@@ -147,7 +148,7 @@ class _InputState extends State<Input> {
               Text(
                 widget.label!,
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
+                  fontWeight: AppFonts.bold,
                   color: widget.transparent ? AppColors.white : AppColors.grey_600,
                 ),
               ),
@@ -196,14 +197,14 @@ class _InputState extends State<Input> {
                 hintStyle: TextStyle(
                   color: widget.transparent ? AppColors.grey_300.withOpacity(0.5) : AppColors.grey_400,
                   fontSize: 14,
-                  fontWeight: FontWeight.normal,
+                  fontWeight: AppFonts.normal,
                 ),
                 fillColor: widget.transparent ? AppColors.white.withOpacity(0.1) : AppColors.grey_100,
                 suffixIcon: suffix,
                 errorMaxLines: 2,
                 errorStyle: widget.transparent
                     ? const TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: AppFonts.bold,
                         color: AppColors.error,
                       )
                     : null,
@@ -223,7 +224,7 @@ class _InputState extends State<Input> {
                       style: TextStyle(
                         color: widget.transparent ? AppColors.grey_300 : AppColors.grey_600,
                         fontSize: 12,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: AppFonts.bold,
                       ),
                     ),
                   ],

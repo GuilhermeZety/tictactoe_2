@@ -1,8 +1,9 @@
-import 'package:tictactoe/app/core/common/constants/app_colors.dart';
-import 'package:tictactoe/app/core/common/extensions/widget_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
+import 'package:tictactoe/app/core/common/constants/app_colors.dart';
+import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 
 class DateTimeInput extends StatelessWidget {
   const DateTimeInput({super.key, this.dateTime, required this.label, required this.onChange});
@@ -20,7 +21,7 @@ class DateTimeInput extends StatelessWidget {
         Text(
           label,
           style: const TextStyle(
-            fontWeight: FontWeight.bold,
+            fontWeight: AppFonts.bold,
             color: AppColors.grey_600,
           ),
         ).expandedH(),
@@ -47,7 +48,7 @@ class DateTimeInput extends StatelessWidget {
             child: Text(
               dateTime == null ? 'Sem validade!' : formatter.format(dateTime!),
               style: const TextStyle(
-                fontWeight: FontWeight.bold,
+                fontWeight: AppFonts.bold,
                 color: AppColors.grey_500,
               ),
             ),

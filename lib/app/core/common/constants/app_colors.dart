@@ -34,9 +34,9 @@ class AppColors {
 
   static const LinearGradient gradient = LinearGradient(
     colors: [
-      primary,
-      secondary,
-      tertiary,
+      Color(0xFF6D45F5),
+      Color(0xFFE76875),
+      Color(0xFFC3802A),
     ],
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,

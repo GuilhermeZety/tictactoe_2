@@ -1,9 +1,8 @@
-import 'package:tictactoe/app/core/common/constants/app_colors.dart';
-import 'package:tictactoe/app/core/common/extensions/context_extension.dart';
-import 'package:tictactoe/app/core/common/extensions/widget_extension.dart';
-import 'package:tictactoe/app/core/common/utils/custom_dialog_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:tictactoe/app/core/common/extensions/context_extension.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
+import 'package:tictactoe/app/core/common/utils/custom_dialog_utils.dart';
 
 class CustomDialog extends StatefulWidget {
   const CustomDialog({
@@ -62,9 +61,9 @@ class _CustomDialogState extends State<CustomDialog> {
               children: [
                 Flexible(
                   child: Container(
-                    decoration: const BoxDecoration(
-                      color: AppColors.grey_100,
-                      borderRadius: BorderRadius.all(
+                    decoration: BoxDecoration(
+                      color: context.colorScheme.surface,
+                      borderRadius: const BorderRadius.all(
                         Radius.circular(20),
                       ),
                     ),
@@ -78,14 +77,6 @@ class _CustomDialogState extends State<CustomDialog> {
                               left: 30,
                               right: 30,
                               top: 20,
-                            ),
-                            decoration: const BoxDecoration(
-                              border: Border(
-                                bottom: BorderSide(
-                                  color: AppColors.grey_200,
-                                  width: 1,
-                                ),
-                              ),
                             ),
                             alignment: Alignment.center,
                             child: widget.top!,
@@ -101,9 +92,9 @@ class _CustomDialogState extends State<CustomDialog> {
                                 left: 30,
                                 right: 30,
                               ),
-                              decoration: const BoxDecoration(
-                                color: AppColors.grey_100,
-                                borderRadius: BorderRadius.only(
+                              decoration: BoxDecoration(
+                                color: context.colorScheme.surface,
+                                borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(20),
                                   topRight: Radius.circular(20),
                                 ),
@@ -120,11 +111,11 @@ class _CustomDialogState extends State<CustomDialog> {
                         ),
                         if (widget.bottom != null)
                           Container(
-                            decoration: const BoxDecoration(
-                              borderRadius: BorderRadius.all(
+                            decoration: BoxDecoration(
+                              borderRadius: const BorderRadius.all(
                                 Radius.circular(20),
                               ),
-                              color: AppColors.grey_100,
+                              color: context.colorScheme.surface,
                             ),
                             padding: const EdgeInsets.only(
                               bottom: 20,

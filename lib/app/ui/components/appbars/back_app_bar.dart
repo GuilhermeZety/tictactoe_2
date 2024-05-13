@@ -1,12 +1,13 @@
 import 'dart:io';
 
-import 'package:tictactoe/app/core/common/constants/app_colors.dart';
-import 'package:tictactoe/app/core/common/extensions/context_extension.dart';
-import 'package:tictactoe/app/core/common/extensions/widget_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:gap/gap.dart';
+import 'package:tictactoe/app/core/common/constants/app_colors.dart';
+import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
+import 'package:tictactoe/app/core/common/extensions/context_extension.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 
 class BackAppBar extends StatelessWidget implements PreferredSizeWidget {
   const BackAppBar({super.key, this.title, this.suffix, this.backAction, this.backIcon, this.backText, this.animationToTop = true, this.showBackText = false});
@@ -60,7 +61,7 @@ class BackAppBar extends StatelessWidget implements PreferredSizeWidget {
                             backText ?? 'Voltar',
                             style: const TextStyle(
                               fontSize: 13,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: AppFonts.bold,
                               color: AppColors.grey_100,
                             ),
                           ),
@@ -77,7 +78,7 @@ class BackAppBar extends StatelessWidget implements PreferredSizeWidget {
                 title ?? '',
                 style: const TextStyle(
                   fontSize: 18,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: AppFonts.bold,
                   color: AppColors.white,
                 ),
                 textAlign: TextAlign.center,

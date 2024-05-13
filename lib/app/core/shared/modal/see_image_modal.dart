@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:tictactoe/app/core/common/extensions/context_extension.dart';
-import 'package:tictactoe/app/core/common/extensions/widget_extension.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 import 'package:tictactoe/app/core/common/utils/custom_dialog_utils.dart';
 import 'package:tictactoe/app/ui/components/button.dart';
 import 'package:tictactoe/app/ui/components/image_cached.dart';

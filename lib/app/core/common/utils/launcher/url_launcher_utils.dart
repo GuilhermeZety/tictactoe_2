@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:gap/gap.dart';
-import 'package:tictactoe/app/core/common/extensions/widget_extension.dart';
+import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
+import 'package:tictactoe/app/core/common/extensions/context_extension.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 import 'package:tictactoe/app/core/common/utils/toasting.dart';
 import 'package:tictactoe/app/core/common/utils/vibrate.dart';
 import 'package:tictactoe/app/ui/components/button.dart';
@@ -15,9 +17,9 @@ class UrlLauncherUtils {
   static Future<void> to(BuildContext context, String url) async {
     vibrate(FeedbackType.selection);
     var result = await CustomDialog(
-      top: const Text(
+      top: Text(
         'Acesso externo',
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+        style: TextStyle(fontWeight: AppFonts.bold, fontSize: 18, color: context.theme.textTheme.titleLarge!.color),
       ),
       bottom: Column(
         children: [

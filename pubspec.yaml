@@ -43,7 +43,7 @@ dev_dependencies:
 
 
 flutter_launcher_icons:
-  android: "fideliddade_ic"
+  android: "launcher_icon"
   ios: true
 
   image_path: "assets/logo/android.png"
@@ -67,9 +67,7 @@ flutter_native_splash:
     image: assets/native_splash.png
     color: "#181C24"
     icon_background_color: "#181C24"
-    branding: assets/native_splash.png
-
-
+    branding: assets/native_splash.pn
 
 flutter:
   uses-material-design: true
@@ -78,7 +76,6 @@ flutter:
     - assets/svgs/
     - assets/images/
     - .env
-
 
   fonts:
     - family: Segoe UI

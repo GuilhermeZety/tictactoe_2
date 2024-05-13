@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:gap/gap.dart';
 import 'package:tictactoe/app/core/common/constants/app_colors.dart';
+import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
 import 'package:tictactoe/app/core/common/errors/failures.dart';
 import 'package:tictactoe/app/core/common/extensions/color_extension.dart';
 import 'package:tictactoe/app/core/common/utils/toasting.dart';
@@ -59,7 +60,7 @@ class Button extends StatefulWidget {
           backgroundColor: (disabled ? AppColors.primary.withOpacity(0.3) : color ?? AppColors.primary).toMaterialStateProperty(),
           foregroundColor: AppColors.white.toMaterialStateProperty(),
           textStyle: MaterialStateProperty.all<TextStyle?>(
-            const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            const TextStyle(color: Colors.white, fontWeight: AppFonts.bold),
           ),
           padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
             padding,
@@ -96,7 +97,7 @@ class Button extends StatefulWidget {
           backgroundColor: (disabled ? AppColors.primary.withOpacity(0.3) : color ?? AppColors.primary).toMaterialStateProperty(),
           foregroundColor: AppColors.white.toMaterialStateProperty(),
           textStyle: MaterialStateProperty.all<TextStyle?>(
-            const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            const TextStyle(color: Colors.white, fontWeight: AppFonts.bold),
           ),
           padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
             padding,
@@ -126,14 +127,14 @@ class Button extends StatefulWidget {
           shape: MaterialStateProperty.all<OutlinedBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
-              side: bordered ? const BorderSide(color: AppColors.white, width: 1) : BorderSide.none,
+              side: BorderSide.none,
             ),
           ),
           elevation: MaterialStateProperty.all<double>(1),
-          backgroundColor: (color ?? (disabled ? AppColors.white.withOpacity(0.5) : AppColors.white)).toMaterialStateProperty(),
-          foregroundColor: (disabled ? AppColors.grey_600 : AppColors.grey_600).toMaterialStateProperty(),
+          backgroundColor: (color ?? (disabled ? AppColors.blue_800.withOpacity(0.5) : AppColors.blue_800)).toMaterialStateProperty(),
+          foregroundColor: (disabled ? AppColors.grey_300 : AppColors.grey_300).toMaterialStateProperty(),
           textStyle: MaterialStateProperty.all<TextStyle?>(
-            const TextStyle(fontWeight: FontWeight.bold),
+            const TextStyle(fontWeight: AppFonts.bold),
           ),
           padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
             padding,
@@ -170,7 +171,7 @@ class Button extends StatefulWidget {
           backgroundColor: (color ?? (disabled ? AppColors.grey_300.withOpacity(0.5) : AppColors.grey_300)).toMaterialStateProperty(),
           foregroundColor: (disabled ? AppColors.grey_700 : AppColors.grey_700).toMaterialStateProperty(),
           textStyle: MaterialStateProperty.all<TextStyle?>(
-            const TextStyle(fontWeight: FontWeight.bold),
+            const TextStyle(fontWeight: AppFonts.bold),
           ),
           padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
             padding,
@@ -207,7 +208,7 @@ class Button extends StatefulWidget {
           backgroundColor: (disabled ? AppColors.white.withOpacity(0.5) : color ?? AppColors.white).toMaterialStateProperty(),
           foregroundColor: AppColors.primary.toMaterialStateProperty(),
           textStyle: MaterialStateProperty.all<TextStyle?>(
-            const TextStyle(color: AppColors.primary, fontWeight: FontWeight.bold),
+            const TextStyle(color: AppColors.primary, fontWeight: AppFonts.bold),
           ),
           padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
             padding,

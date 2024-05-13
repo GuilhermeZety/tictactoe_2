@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tictactoe/app/core/common/constants/app_colors.dart';
+import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
 import 'package:tictactoe/app/core/common/extensions/color_extension.dart';
 
 /// > A class that contains all the colors used in the app
 class AppTheme {
   static ThemeData get dark => ThemeData(
-        fontFamily: 'Segoe UI',
+        fontFamily: AppFonts.defaultFont,
         primarySwatch: AppColors.primary.toMaterialColor(),
         textSelectionTheme: TextSelectionThemeData(
           selectionHandleColor: AppColors.primary,
@@ -13,9 +14,9 @@ class AppTheme {
           selectionColor: AppColors.primary.withOpacity(0.2),
         ),
         textTheme: const TextTheme(
-          titleLarge: TextStyle(color: AppColors.white, fontWeight: FontWeight.bold),
-          titleMedium: TextStyle(color: AppColors.grey_200, fontWeight: FontWeight.w600),
-          titleSmall: TextStyle(color: AppColors.grey_300, fontWeight: FontWeight.normal),
+          titleLarge: TextStyle(color: AppColors.white, fontWeight: AppFonts.bold),
+          titleMedium: TextStyle(color: AppColors.grey_200, fontWeight: AppFonts.semiBold),
+          titleSmall: TextStyle(color: AppColors.grey_300, fontWeight: AppFonts.normal),
           displayLarge: TextStyle(color: AppColors.grey_300, letterSpacing: 0.4),
           displayMedium: TextStyle(color: AppColors.grey_300, letterSpacing: 0.4),
           bodyMedium: TextStyle(color: AppColors.grey_300, letterSpacing: 0.4),
@@ -28,7 +29,9 @@ class AppTheme {
           primary: AppColors.primary,
           primaryContainer: Colors.white,
           secondary: AppColors.primary,
-          background: Colors.white,
+          background: AppColors.blue_800,
+          surface: AppColors.blue_700,
+          error: AppColors.error,
         ),
         datePickerTheme: const DatePickerThemeData(
           backgroundColor: AppColors.blue_800,
@@ -39,7 +42,7 @@ class AppTheme {
           headerHelpStyle: TextStyle(
             color: AppColors.grey_300,
             fontSize: 16,
-            fontWeight: FontWeight.bold,
+            fontWeight: AppFonts.bold,
           ),
         ),
         disabledColor: AppColors.blue_600,
@@ -49,12 +52,12 @@ class AppTheme {
           labelStyle: const TextStyle(
             color: AppColors.grey_200,
             fontSize: 16,
-            fontWeight: FontWeight.bold,
+            fontWeight: AppFonts.bold,
           ),
           hintStyle: const TextStyle(
             color: AppColors.grey_500,
             fontSize: 16,
-            fontWeight: FontWeight.normal,
+            fontWeight: AppFonts.normal,
           ),
           border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -88,7 +91,7 @@ class AppTheme {
           ),
           //ERROR  ------
           errorStyle: TextStyle(
-            fontWeight: FontWeight.bold,
+            fontWeight: AppFonts.bold,
             color: AppColors.error.withOpacity(0.5),
           ),
           errorBorder: const OutlineInputBorder(

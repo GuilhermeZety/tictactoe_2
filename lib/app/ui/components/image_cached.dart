@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:tictactoe/app/core/common/constants/app_colors.dart';
-import 'package:tictactoe/app/core/common/extensions/widget_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:tictactoe/app/core/common/constants/app_colors.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 
 class ImageCached extends StatelessWidget {
   const ImageCached({

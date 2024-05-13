@@ -3,9 +3,10 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:gap/gap.dart';
 import 'package:tictactoe/app/core/common/constants/app_assets.dart';
 import 'package:tictactoe/app/core/common/constants/app_colors.dart';
+import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
 import 'package:tictactoe/app/core/common/constants/app_routes.dart';
 import 'package:tictactoe/app/core/common/extensions/context_extension.dart';
-import 'package:tictactoe/app/core/common/extensions/widget_extension.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 import 'package:tictactoe/app/ui/components/button.dart';
 
 class NotConnectionPage extends StatefulWidget {
@@ -43,7 +44,7 @@ class _NotConnectionPageState extends State<NotConnectionPage> {
                   style: TextStyle(
                     color: AppColors.grey_600,
                     fontSize: 24,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: AppFonts.bold,
                   ),
                 ),
                 const Gap(10),

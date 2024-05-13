@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:tictactoe/app/core/common/constants/app_colors.dart';
 import 'package:tictactoe/app/core/common/extensions/context_extension.dart';
-import 'package:tictactoe/app/core/common/extensions/widget_extension.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 import 'package:tictactoe/app/core/shared/modal/logout_modal.dart';
 import 'package:tictactoe/app/ui/components/image_cached.dart';
-import 'package:flutter/material.dart';
 
 class LogoutAppBar extends StatelessWidget {
   const LogoutAppBar({super.key, required this.photo, this.showPhoto = true});

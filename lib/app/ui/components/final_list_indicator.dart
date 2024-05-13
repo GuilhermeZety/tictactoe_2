@@ -1,6 +1,6 @@
-import 'package:tictactoe/app/core/common/constants/app_colors.dart';
-import 'package:tictactoe/app/core/common/extensions/widget_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:tictactoe/app/core/common/constants/app_colors.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 
 class FinalListIndicator extends StatelessWidget {
   const FinalListIndicator({super.key});

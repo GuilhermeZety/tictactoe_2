@@ -3,9 +3,10 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:tictactoe/app/core/common/constants/app_assets.dart';
+import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
 import 'package:tictactoe/app/core/common/constants/app_routes.dart';
 import 'package:tictactoe/app/core/common/extensions/context_extension.dart';
-import 'package:tictactoe/app/core/common/extensions/widget_extension.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 import 'package:tictactoe/app/ui/components/button.dart';
 
 class NotFoundPage extends StatefulWidget {
@@ -39,7 +40,7 @@ class _NotFoundPageState extends State<NotFoundPage> {
                     ),
                     const Text(
                       'Página não encontrada!',
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      style: TextStyle(fontWeight: AppFonts.bold, fontSize: 20),
                       textAlign: TextAlign.center,
                     ),
                     const Gap(10),

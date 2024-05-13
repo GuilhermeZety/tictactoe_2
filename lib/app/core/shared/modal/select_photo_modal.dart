@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tictactoe/app/core/common/constants/app_colors.dart';
-import 'package:tictactoe/app/core/common/extensions/widget_extension.dart';
+import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 import 'package:tictactoe/app/core/common/utils/custom_dialog_utils.dart';
 import 'package:tictactoe/app/ui/components/button.dart';
 import 'package:tictactoe/app/ui/components/dialogs/custom_dialog.dart';
@@ -22,7 +23,7 @@ class SelectPhotoModal extends StatefulWidget {
           'Selecione uma imagem',
           style: TextStyle(
             color: AppColors.grey_600,
-            fontWeight: FontWeight.bold,
+            fontWeight: AppFonts.bold,
             fontSize: 20,
           ),
         ),

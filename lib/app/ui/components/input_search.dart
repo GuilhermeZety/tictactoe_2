@@ -1,10 +1,11 @@
 import 'dart:async';
 
-import 'package:tictactoe/app/core/common/constants/app_colors.dart';
-import 'package:tictactoe/app/ui/components/loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
+import 'package:tictactoe/app/core/common/constants/app_colors.dart';
+import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
+import 'package:tictactoe/app/ui/components/loader.dart';
 
 class InputSearch extends StatefulWidget {
   final String? label;
@@ -92,7 +93,7 @@ class _InputSearchState extends State<InputSearch> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             if (widget.label != null) ...[
-              Text(widget.label!, style: const TextStyle(fontWeight: FontWeight.bold)),
+              Text(widget.label!, style: const TextStyle(fontWeight: AppFonts.bold)),
               const Gap(5),
             ],
             TextFormField(

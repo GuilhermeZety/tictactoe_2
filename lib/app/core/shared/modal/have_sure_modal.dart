@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:tictactoe/app/core/common/extensions/widget_extension.dart';
+import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 import 'package:tictactoe/app/core/common/utils/custom_dialog_utils.dart';
 import 'package:tictactoe/app/ui/components/button.dart';
 import 'package:tictactoe/app/ui/components/dialogs/custom_dialog.dart';
@@ -36,7 +37,7 @@ class _HaveSureModalState extends State<HaveSureModal> {
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 18,
-          fontWeight: FontWeight.bold,
+          fontWeight: AppFonts.bold,
         ),
       ),
       bottom: Column(

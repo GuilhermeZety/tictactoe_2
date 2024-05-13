@@ -1,6 +1,7 @@
-import 'package:tictactoe/app/core/common/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:tictactoe/app/core/common/constants/app_colors.dart';
+import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
 
 class ButtonBack extends StatelessWidget {
   const ButtonBack({super.key, this.inverted = true});
@@ -29,7 +30,7 @@ class ButtonBack extends StatelessWidget {
                 'Voltar',
                 style: TextStyle(
                   color: inverted ? AppColors.grey_600 : AppColors.white,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: AppFonts.bold,
                 ),
               ),
             ],

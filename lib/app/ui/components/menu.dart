@@ -1,10 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:tictactoe/app/core/common/constants/app_colors.dart';
-import 'package:tictactoe/app/core/common/extensions/widget_extension.dart';
-import 'package:tictactoe/app/ui/components/panel.dart';
 import 'package:flextras/flextras.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:tictactoe/app/core/common/constants/app_colors.dart';
+import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
+import 'package:tictactoe/app/ui/components/panel.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key, required this.title, required this.itens});
@@ -21,7 +22,7 @@ class Menu extends StatelessWidget {
           title,
           style: const TextStyle(
             color: AppColors.grey_400,
-            fontWeight: FontWeight.bold,
+            fontWeight: AppFonts.bold,
           ),
         ).pLeft(12),
         const Gap(8),
@@ -45,7 +46,7 @@ class Menu extends StatelessWidget {
                             item.text,
                             style: const TextStyle(
                               color: AppColors.grey_500,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: AppFonts.bold,
                             ),
                           ).expanded(),
                           const Icon(
