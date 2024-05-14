@@ -13,6 +13,13 @@ class AppTheme {
   //
 
   final themeMode = ThemeMode.dark.toSignal();
+  ThemeMode invertThemeMode() => themeMode.value = themeMode.value == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
+
+  //CHANGE THEME CODE
+  // AppTheme().invertThemeMode();
+  // switcher.changeTheme(
+  //   theme: AppTheme().themeMode.value == ThemeMode.dark ? ThemeData.light() : ThemeData.dark(),
+  // );
 
   static ThemeData get dark => ThemeData(
         fontFamily: AppFonts.defaultFont,

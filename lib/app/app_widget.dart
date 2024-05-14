@@ -1,3 +1,4 @@
+import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -22,21 +23,24 @@ class _AppWidgetState extends State<AppWidget> with SignalsAutoDisposeMixin {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Jogo da Velha',
-      localizationsDelegates: const [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: AppLocale().suportedLocales.map((e) => Locale(e)),
-      locale: AppLocale().locale.watch(context),
-      darkTheme: AppTheme.dark,
-      theme: ThemeData.light(),
-      themeMode: AppTheme().themeMode.watch(context),
-      debugShowCheckedModeBanner: false,
-      routerDelegate: Modular.routerDelegate,
-      routeInformationParser: Modular.routeInformationParser,
+    return ThemeProvider(
+      initTheme: AppTheme.dark,
+      builder: (context, myTheme) {
+        return MaterialApp.router(
+          title: 'Jogo da Velha',
+          localizationsDelegates: const [
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: AppLocale().suportedLocales.map((e) => Locale(e)),
+          locale: AppLocale().locale.watch(context),
+          theme: myTheme,
+          debugShowCheckedModeBanner: false,
+          routerDelegate: Modular.routerDelegate,
+          routeInformationParser: Modular.routeInformationParser,
+        );
+      },
     );
   }
 }

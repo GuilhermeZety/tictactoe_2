@@ -1,5 +1,7 @@
+import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
-import 'package:tictactoe/app/core/common/constants/app_theme.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
+import 'package:tictactoe/app/ui/components/language_switch.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
@@ -9,16 +11,29 @@ class AuthPage extends StatefulWidget {
 }
 
 class _AuthPageState extends State<AuthPage> {
+  bool isDarkMode = false;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: FilledButton(
-          onPressed: () {
-            //
-            AppTheme().themeMode.value = AppTheme().themeMode.value == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
-          },
-          child: const Text('change theme'),
+    return ThemeSwitchingArea(
+      child: SafeArea(
+        child: Scaffold(
+          body: Column(
+            children: [
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  LanguageSwitch(),
+                ],
+              ),
+              const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Hello'),
+                ],
+              ).expanded(),
+            ],
+          ).p(32),
         ),
       ),
     );
