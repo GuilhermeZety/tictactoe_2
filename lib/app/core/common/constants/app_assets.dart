@@ -14,4 +14,7 @@ class AppSvgs {
 
   final String notFound = '${_path}not_found.svg';
   final String logo = '${_path}logo.svg';
+  final String brazil = '${_path}brazil.svg';
+  final String spain = '${_path}spain.svg';
+  final String unitedStates = '${_path}united-states.svg';
 }

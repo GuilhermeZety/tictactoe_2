@@ -5,6 +5,8 @@ import 'package:tictactoe/app/core/common/constants/app_assets.dart';
 import 'package:tictactoe/app/core/common/constants/app_colors.dart';
 import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
 import 'package:tictactoe/app/core/common/extensions/widget/text_extension.dart';
+import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
+import 'package:tictactoe/app/modules/splash/presentation/controller/splash_controller.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SplashPage extends StatefulWidget {
@@ -15,6 +17,14 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  SplashController splashController = SplashController();
+
+  @override
+  void initState() {
+    splashController.init();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +35,7 @@ class _SplashPageState extends State<SplashPage> {
               AppAssets.svgs.logo,
               width: 150,
             )
+                .hero('logo')
                 .animate(
                   onComplete: (controller) => controller.repeat(reverse: true),
                 )
@@ -53,7 +64,7 @@ class _SplashPageState extends State<SplashPage> {
                           fontWeight: AppFonts.semiBold,
                           fontSize: 16,
                         ),
-                      ).gradient(AppColors.gradient),
+                      ).gradient(AppColors.gradient).animate(onComplete: (_) => _.repeat()).shimmer(duration: 1.seconds, delay: 2.seconds),
                     ],
                   ),
                 ),

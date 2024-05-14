@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:signals/signals.dart';
 import 'package:tictactoe/app/core/common/constants/app_colors.dart';
 import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
 import 'package:tictactoe/app/core/common/extensions/color_extension.dart';
 
 /// > A class that contains all the colors used in the app
 class AppTheme {
+  //SingleTon
+  AppTheme._();
+  static final AppTheme _instance = AppTheme._();
+  factory AppTheme() => AppTheme._instance;
+  //
+
+  final themeMode = ThemeMode.dark.toSignal();
+
   static ThemeData get dark => ThemeData(
         fontFamily: AppFonts.defaultFont,
         primarySwatch: AppColors.primary.toMaterialColor(),
@@ -29,7 +38,6 @@ class AppTheme {
           primary: AppColors.primary,
           primaryContainer: Colors.white,
           secondary: AppColors.primary,
-          background: AppColors.blue_800,
           surface: AppColors.blue_700,
           error: AppColors.error,
         ),

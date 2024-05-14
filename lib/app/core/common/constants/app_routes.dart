@@ -3,4 +3,5 @@
 class AppRoutes {
   static const String splash = '/';
   static const String notConnection = '/not_connection/';
+  static const String auth = '/auth/';
 }

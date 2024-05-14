@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:tictactoe/app/core/common/constants/app_assets.dart';
-import 'package:tictactoe/app/core/common/constants/app_colors.dart';
 import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
 import 'package:tictactoe/app/core/common/constants/app_routes.dart';
 import 'package:tictactoe/app/core/common/extensions/context_extension.dart';
@@ -32,26 +32,25 @@ class _NotConnectionPageState extends State<NotConnectionPage> {
               children: [
                 SizedBox(
                   width: 300,
-                  child: Image.asset(
+                  child: SvgPicture.asset(
                     AppAssets.svgs.logo,
                     height: 60,
-                    color: AppColors.primary,
                   ),
                 ).hero('logo'),
                 const Gap(50),
-                const Text(
+                Text(
                   'Ops!',
                   style: TextStyle(
-                    color: AppColors.grey_600,
+                    color: context.textTheme.titleLarge!.color,
                     fontSize: 24,
                     fontWeight: AppFonts.bold,
                   ),
                 ),
                 const Gap(10),
-                const Text(
+                Text(
                   'Parece que você está sem conexão com a internet. \n\nVerifique sua conexão e tente novamente.',
                   style: TextStyle(
-                    color: AppColors.grey_600,
+                    color: context.textTheme.titleMedium!.color,
                     fontSize: 16,
                   ),
                   textAlign: TextAlign.center,
