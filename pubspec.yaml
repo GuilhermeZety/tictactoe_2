@@ -36,6 +36,7 @@ dependencies:
   flutter_native_splash: ^2.4.0
   flutter_launcher_icons: ^0.13.1
   animated_theme_switcher: ^2.0.10
+  localization: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -77,6 +78,7 @@ flutter:
     - assets/svgs/
     - assets/images/
     - .env
+    - assets/translations/
 
   fonts:
     - family: Segoe UI
