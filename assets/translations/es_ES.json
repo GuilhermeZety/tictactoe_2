@@ -1,3 +1,11 @@
-{
-    "hello": "Olá"
+{    
+    "developed_by": "Desarrollado por",
+    "wellcome": "¡Bienvenido!",
+    "auth_before_1": "Antes de jugar con un amigo",
+    "auth_before_2": "necesito que inicies sesión con una",
+    "auth_before_3": "o inicies sesión como",
+    "account": "cuenta",
+    "guest": "invitado",
+    "access_with": "acceso con",
+    "access_with_guest": "acceder como invitado"
 }

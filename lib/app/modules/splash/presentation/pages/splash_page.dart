@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tictactoe/app/core/common/constants/app_assets.dart';
 import 'package:tictactoe/app/core/common/constants/app_colors.dart';
 import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
+import 'package:tictactoe/app/core/common/extensions/locale_extension.dart';
 import 'package:tictactoe/app/core/common/extensions/widget/text_extension.dart';
 import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 import 'package:tictactoe/app/modules/splash/presentation/controller/splash_controller.dart';
@@ -55,8 +56,8 @@ class _SplashPageState extends State<SplashPage> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Text(
-                        'Desenvolvido por',
+                      Text(
+                        'developed_by'.t,
                       ),
                       const Text(
                         'Guilherme Martins',
@@ -64,7 +65,7 @@ class _SplashPageState extends State<SplashPage> {
                           fontWeight: AppFonts.semiBold,
                           fontSize: 16,
                         ),
-                      ).gradient(AppColors.gradient).animate(onComplete: (_) => _.repeat()).shimmer(duration: 1.seconds, delay: 2.seconds),
+                      ).gradient(AppColors.gradient).animate(onComplete: (controller) => controller.repeat()).shimmer(duration: 1.seconds, delay: 2.seconds),
                     ],
                   ),
                 ),

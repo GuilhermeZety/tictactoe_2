@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-extension ToMaterialStateProperty on Color {
-  MaterialStateProperty<Color?>? toMaterialStateProperty() {
-    return MaterialStateProperty.all<Color?>(this);
+extension ToWidgetStateProperty on Color {
+  WidgetStateProperty<Color?>? toWidgetStateProperty() {
+    return WidgetStateProperty.all<Color?>(this);
   }
 }
 

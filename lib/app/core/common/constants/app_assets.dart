@@ -17,4 +17,8 @@ class AppSvgs {
   final String brazil = '${_path}brazil.svg';
   final String spain = '${_path}spain.svg';
   final String unitedStates = '${_path}united-states.svg';
+
+  final String google = '${_path}google.svg';
+  final String discord = '${_path}discord.svg';
+  final String github = '${_path}github.svg';
 }

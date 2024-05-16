@@ -110,8 +110,8 @@ class _InputSearchState extends State<InputSearch> {
               maxLines: widget.maxLines ?? 1,
               readOnly: widget.readOnly,
               obscureText: widget.keyboard == TextInputType.visiblePassword ? !visible : false,
-              onChanged: (_) {
-                widget.onChange?.call(_);
+              onChanged: (value) {
+                widget.onChange?.call(value);
                 search();
               },
               onTap: widget.onTap,

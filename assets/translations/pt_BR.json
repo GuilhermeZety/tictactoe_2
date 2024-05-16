@@ -1,3 +1,11 @@
 {
-    "hello": "Salve"
+    "developed_by": "Desenvolvido por",
+    "wellcome": "Bem Vindo!",
+    "auth_before_1": "Antes de você jogar com um amigo",
+    "auth_before_2": "preciso que você acesse com alguma",
+    "auth_before_3": "ou entre como",
+    "account": "conta",
+    "guest": "convidado",
+    "access_with": "acessar com",
+    "access_with_guest": "acessar como convidado"
 }

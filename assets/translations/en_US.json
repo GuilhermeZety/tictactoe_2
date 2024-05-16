@@ -1,3 +1,11 @@
 {
-    "hello": "Hello"
+    "developed_by": "Developed by",
+    "wellcome": "Welcome!",
+    "auth_before_1": "Before you can play with a friend",
+    "auth_before_2": "we need you to log in with an",
+    "auth_before_3": "or join as a",
+    "account": "account",
+    "guest": "guest",
+    "access_with": "access with",
+    "access_with_guest": "access as guest"
 }

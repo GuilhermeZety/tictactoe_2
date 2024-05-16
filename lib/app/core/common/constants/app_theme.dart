@@ -37,6 +37,9 @@ class AppTheme {
           displayMedium: TextStyle(color: AppColors.grey_300, letterSpacing: 0.4),
           bodyMedium: TextStyle(color: AppColors.grey_300, letterSpacing: 0.4),
         ),
+        iconTheme: const IconThemeData(
+          color: AppColors.grey_200,
+        ),
       ).copyWith(
         scaffoldBackgroundColor: AppColors.blue_800,
         canvasColor: AppColors.blue_700,

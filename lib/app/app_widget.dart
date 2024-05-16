@@ -4,9 +4,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:localization/localization.dart';
 import 'package:signals/signals_flutter.dart';
-import 'package:tictactoe/app/core/common/constants/app_locales.dart';
 import 'package:tictactoe/app/core/common/constants/app_theme.dart';
 import 'package:tictactoe/app/core/common/utils/overlay_ui_utils.dart';
+import 'package:tictactoe/app/core/shared/location_session.dart';
 
 class AppWidget extends StatefulWidget {
   const AppWidget({super.key});
@@ -37,8 +37,8 @@ class _AppWidgetState extends State<AppWidget> with SignalsAutoDisposeMixin {
             GlobalCupertinoLocalizations.delegate,
             LocalJsonLocalization.delegate,
           ],
-          supportedLocales: AppLocale().suportedLocales.map((e) => Locale(e.$1, e.$2)),
-          locale: AppLocale().locale.watch(context),
+          supportedLocales: LocalizatiionSession().suportedLocales.map((e) => Locale(e.$1, e.$2)),
+          locale: LocalizatiionSession().locale.watch(context),
           theme: myTheme,
           debugShowCheckedModeBanner: false,
           routerDelegate: Modular.routerDelegate,

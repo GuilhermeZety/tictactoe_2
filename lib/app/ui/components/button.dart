@@ -50,19 +50,19 @@ class Button extends StatefulWidget {
   })  : secondary = false,
         inverted = false,
         style = ButtonStyle(
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
               side: bordered ? const BorderSide(color: AppColors.primary, width: 2) : BorderSide.none,
             ),
           ),
-          elevation: MaterialStateProperty.all<double>(disabled ? 0 : 2),
-          backgroundColor: (disabled ? AppColors.primary.withOpacity(0.3) : color ?? AppColors.primary).toMaterialStateProperty(),
-          foregroundColor: AppColors.white.toMaterialStateProperty(),
-          textStyle: MaterialStateProperty.all<TextStyle?>(
+          elevation: WidgetStateProperty.all<double>(disabled ? 0 : 2),
+          backgroundColor: (disabled ? AppColors.primary.withOpacity(0.3) : color ?? AppColors.primary).toWidgetStateProperty(),
+          foregroundColor: AppColors.white.toWidgetStateProperty(),
+          textStyle: WidgetStateProperty.all<TextStyle?>(
             const TextStyle(color: Colors.white, fontWeight: AppFonts.bold),
           ),
-          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+          padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
             padding,
           ),
         );
@@ -87,19 +87,19 @@ class Button extends StatefulWidget {
         inverted = false,
         size = const Size(double.infinity, 40),
         style = ButtonStyle(
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
               side: bordered ? const BorderSide(color: AppColors.primary, width: 2) : BorderSide.none,
             ),
           ),
-          elevation: MaterialStateProperty.all<double>(disabled ? 0 : 2),
-          backgroundColor: (disabled ? AppColors.primary.withOpacity(0.3) : color ?? AppColors.primary).toMaterialStateProperty(),
-          foregroundColor: AppColors.white.toMaterialStateProperty(),
-          textStyle: MaterialStateProperty.all<TextStyle?>(
+          elevation: WidgetStateProperty.all<double>(disabled ? 0 : 2),
+          backgroundColor: (disabled ? AppColors.primary.withOpacity(0.3) : color ?? AppColors.primary).toWidgetStateProperty(),
+          foregroundColor: AppColors.white.toWidgetStateProperty(),
+          textStyle: WidgetStateProperty.all<TextStyle?>(
             const TextStyle(color: Colors.white, fontWeight: AppFonts.bold),
           ),
-          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+          padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
             padding,
           ),
         );
@@ -124,19 +124,19 @@ class Button extends StatefulWidget {
   })  : secondary = false,
         inverted = false,
         style = ButtonStyle(
-          shape: MaterialStateProperty.all<OutlinedBorder>(
+          shape: WidgetStateProperty.all<OutlinedBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
               side: BorderSide.none,
             ),
           ),
-          elevation: MaterialStateProperty.all<double>(1),
-          backgroundColor: (color ?? (disabled ? AppColors.blue_800.withOpacity(0.5) : AppColors.blue_800)).toMaterialStateProperty(),
-          foregroundColor: (disabled ? AppColors.grey_300 : AppColors.grey_300).toMaterialStateProperty(),
-          textStyle: MaterialStateProperty.all<TextStyle?>(
+          elevation: WidgetStateProperty.all<double>(1),
+          backgroundColor: (color ?? (disabled ? AppColors.blue_800.withOpacity(0.5) : AppColors.blue_800)).toWidgetStateProperty(),
+          foregroundColor: (disabled ? AppColors.grey_300 : AppColors.grey_300).toWidgetStateProperty(),
+          textStyle: WidgetStateProperty.all<TextStyle?>(
             const TextStyle(fontWeight: AppFonts.bold),
           ),
-          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+          padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
             padding,
           ),
         );
@@ -161,19 +161,19 @@ class Button extends StatefulWidget {
   })  : secondary = false,
         inverted = false,
         style = ButtonStyle(
-          shape: MaterialStateProperty.all<OutlinedBorder>(
+          shape: WidgetStateProperty.all<OutlinedBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
               side: bordered ? const BorderSide(color: AppColors.grey_300, width: 1) : BorderSide.none,
             ),
           ),
-          elevation: MaterialStateProperty.all<double>(1),
-          backgroundColor: (color ?? (disabled ? AppColors.grey_300.withOpacity(0.5) : AppColors.grey_300)).toMaterialStateProperty(),
-          foregroundColor: (disabled ? AppColors.grey_700 : AppColors.grey_700).toMaterialStateProperty(),
-          textStyle: MaterialStateProperty.all<TextStyle?>(
+          elevation: WidgetStateProperty.all<double>(1),
+          backgroundColor: (color ?? (disabled ? AppColors.grey_300.withOpacity(0.5) : AppColors.grey_300)).toWidgetStateProperty(),
+          foregroundColor: (disabled ? AppColors.grey_700 : AppColors.grey_700).toWidgetStateProperty(),
+          textStyle: WidgetStateProperty.all<TextStyle?>(
             const TextStyle(fontWeight: AppFonts.bold),
           ),
-          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+          padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
             padding,
           ),
         );
@@ -198,19 +198,19 @@ class Button extends StatefulWidget {
   })  : secondary = false,
         inverted = true,
         style = ButtonStyle(
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
               side: bordered ? const BorderSide(color: AppColors.primary, width: 2) : BorderSide.none,
             ),
           ),
-          elevation: MaterialStateProperty.all<double>(disabled ? 0 : 2),
-          backgroundColor: (disabled ? AppColors.white.withOpacity(0.5) : color ?? AppColors.white).toMaterialStateProperty(),
-          foregroundColor: AppColors.primary.toMaterialStateProperty(),
-          textStyle: MaterialStateProperty.all<TextStyle?>(
+          elevation: WidgetStateProperty.all<double>(disabled ? 0 : 2),
+          backgroundColor: (disabled ? AppColors.white.withOpacity(0.5) : color ?? AppColors.white).toWidgetStateProperty(),
+          foregroundColor: AppColors.primary.toWidgetStateProperty(),
+          textStyle: WidgetStateProperty.all<TextStyle?>(
             const TextStyle(color: AppColors.primary, fontWeight: AppFonts.bold),
           ),
-          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+          padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
             padding,
           ),
         );
@@ -286,7 +286,7 @@ class _ButtonState extends State<Button> {
               }
             },
       style: widget.style?.copyWith(
-        fixedSize: widget.size != null ? MaterialStateProperty.all<Size>(widget.size!) : null,
+        fixedSize: widget.size != null ? WidgetStateProperty.all<Size>(widget.size!) : null,
       ),
       child: isLoading
           ? Loader(size: 16, inverted: !widget.inverted)

@@ -1,6 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:tictactoe/app/core/common/constants/app_colors.dart';
 import 'package:tictactoe/app/ui/components/shimed_box.dart';
-import 'package:flutter/material.dart';
 
 class Panel extends StatelessWidget {
   final EdgeInsets padding;
@@ -68,7 +68,7 @@ class Panel extends StatelessWidget {
           onLongPress: onLongPress,
           borderRadius: BorderRadius.circular(radius),
           splashColor: splashColor ?? AppColors.grey_100,
-          overlayColor: MaterialStateProperty.all<Color>(
+          overlayColor: WidgetStateProperty.all<Color>(
             splashColor?.withOpacity(0.5) ?? AppColors.grey_100.withOpacity(0.5),
           ),
           child: Padding(
