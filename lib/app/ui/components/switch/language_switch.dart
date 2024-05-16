@@ -12,21 +12,29 @@ class LanguageSwitch extends StatefulWidget {
 }
 
 class _LanguageSwitchState extends State<LanguageSwitch> with SignalsAutoDisposeMixin {
-  final currentLanguageSVG = computed(
-    () {
-      switch (LocalizatiionSession().locale.value.languageCode) {
-        case 'pt':
-          return AppAssets.svgs.brazil;
-        case 'en':
-          return AppAssets.svgs.unitedStates;
-        case 'es':
-          return AppAssets.svgs.spain;
-        default:
-          return AppAssets.svgs.unitedStates;
+  late String currentLanguageSVG;
+
+  @override
+  void initState() {
+    update(LocalizatiionSession().locale.value.languageCode);
+    effect(() {
+      var value = LocalizatiionSession().locale.value.languageCode;
+      if (value != currentLanguageSVG) {
+        update(LocalizatiionSession().locale.value.languageCode);
       }
-    },
-    autoDispose: true,
-  );
+    });
+    super.initState();
+  }
+
+  void update(String value) {
+    currentLanguageSVG = switch (value) {
+      'pt' => AppAssets.svgs.brazil,
+      'en' => AppAssets.svgs.unitedStates,
+      'es' => AppAssets.svgs.spain,
+      _ => AppAssets.svgs.unitedStates,
+    };
+    if (mounted) setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +46,7 @@ class _LanguageSwitchState extends State<LanguageSwitch> with SignalsAutoDispose
         mainAxisSize: MainAxisSize.min,
         children: [
           SvgPicture.asset(
-            currentLanguageSVG.watch(context),
+            currentLanguageSVG,
             width: 30,
             height: 30,
           ),

@@ -12,6 +12,8 @@ class LocalizatiionSession {
   factory LocalizatiionSession() => LocalizatiionSession._instance;
   //
 
+  late Signal<Locale> locale;
+
   void init() {
     locale = Locale(session.prefs.getString('localization') ?? Platform.localeName.split('_')[0]).toSignal();
   }
@@ -21,7 +23,6 @@ class LocalizatiionSession {
     ('pt', 'BR'),
     ('es', 'ES'),
   ];
-  late Signal<Locale> locale;
 
   void switchLocale() {
     switch (locale.value.languageCode) {

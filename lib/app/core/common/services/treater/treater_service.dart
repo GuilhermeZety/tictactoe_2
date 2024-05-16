@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:tictactoe/app/core/common/errors/exceptions.dart';
 import 'package:tictactoe/app/core/common/errors/failures.dart';
 import 'package:tictactoe/app/core/common/services/connection/connection_checker_connection_service_impl.dart';
@@ -18,13 +19,22 @@ class TreaterService {
     if (await ConnectionCheckerPlusServiceImpl().isConnected || !online) {
       try {
         return Right(await code());
+      } on AuthException catch (e, stt) {
+        log(e.message, stackTrace: stt);
+
+        return Left(
+          Failure(
+            message: e.message,
+            stackTrace: stt,
+          ),
+        );
       } on ServerException catch (e, stt) {
         log(e.message ?? e.toString(), stackTrace: stt);
 
         return Left(
           Failure(
             message: e.message ?? errorIdentification ?? '',
-            stackTrace: e.stackTrace,
+            stackTrace: stt,
           ),
         );
       } on Exception catch (e, stt) {

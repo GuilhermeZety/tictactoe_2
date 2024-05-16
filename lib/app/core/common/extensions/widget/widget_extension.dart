@@ -92,15 +92,18 @@ extension SliverPaddings on Widget {
 }
 
 extension BasicAnimations on Widget {
-  Widget slideFade(bool toTop, {Duration? duration, double? fadeInit, double range = 0.2}) => animate()
-      .fade(
-        begin: fadeInit ?? 0.2,
-        end: 1,
-        duration: duration ?? 300.ms,
-      )
-      .slideY(
-        begin: toTop ? range : -range,
-        end: 0,
-        duration: duration ?? 300.ms,
-      );
+  Widget slideFade(bool toTop, {Duration? duration, double fadeInit = 0, double range = 0.2, bool active = true, Duration delay = const Duration(milliseconds: 300)}) => !active
+      ? this
+      : animate()
+          .fade(
+            begin: fadeInit,
+            end: 1,
+            delay: delay,
+            duration: duration ?? 300.ms,
+          )
+          .slideY(
+            begin: toTop ? range : -range,
+            end: 0,
+            duration: duration ?? 300.ms,
+          );
 }

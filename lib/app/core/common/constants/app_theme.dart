@@ -3,6 +3,7 @@ import 'package:signals/signals.dart';
 import 'package:tictactoe/app/core/common/constants/app_colors.dart';
 import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
 import 'package:tictactoe/app/core/common/extensions/color_extension.dart';
+import 'package:tictactoe/app/core/common/utils/overlay_ui_utils.dart';
 
 /// > A class that contains all the colors used in the app
 class AppTheme {
@@ -13,13 +14,10 @@ class AppTheme {
   //
 
   final themeMode = ThemeMode.dark.toSignal();
-  ThemeMode invertThemeMode() => themeMode.value = themeMode.value == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
-
-  //CHANGE THEME CODE
-  // AppTheme().invertThemeMode();
-  // switcher.changeTheme(
-  //   theme: AppTheme().themeMode.value == ThemeMode.dark ? ThemeData.light() : ThemeData.dark(),
-  // );
+  void invertThemeMode() {
+    themeMode.value = themeMode.value == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
+    OverlayUIUtils.setOverlayStyle(barDark: themeMode.value != ThemeMode.dark);
+  }
 
   static ThemeData get dark => ThemeData(
         fontFamily: AppFonts.defaultFont,

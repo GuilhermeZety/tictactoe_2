@@ -37,6 +37,7 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   animated_theme_switcher: ^2.0.10
   localization: ^2.1.1
+  supabase_flutter: ^2.5.3
 
 dev_dependencies:
   flutter_test:

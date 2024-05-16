@@ -4,6 +4,7 @@ import 'package:tictactoe/app/core/common/services/connection/connection_checker
 import 'package:tictactoe/app/core/common/services/connection/connection_service.dart';
 import 'package:tictactoe/app/core/common/services/deep_links/deep_links_service.dart';
 import 'package:tictactoe/app/modules/auth/auth_module.dart';
+import 'package:tictactoe/app/modules/home/home_module.dart';
 import 'package:tictactoe/app/modules/not_connection/presentation/pages/not_connection_page.dart';
 import 'package:tictactoe/app/modules/not_found/presentation/pages/not_found_page.dart';
 import 'package:tictactoe/app/modules/splash/presentation/pages/splash_page.dart';
@@ -21,6 +22,12 @@ class AppModule extends Module {
     r.module(
       '/auth/',
       module: AuthModule(),
+      transition: TransitionType.fadeIn,
+      duration: 500.ms,
+    );
+    r.module(
+      '/home/',
+      module: HomeModule(),
       transition: TransitionType.fadeIn,
       duration: 500.ms,
     );
