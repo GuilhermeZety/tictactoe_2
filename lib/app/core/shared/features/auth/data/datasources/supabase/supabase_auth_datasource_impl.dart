@@ -23,7 +23,8 @@ class SupabaseAuthDatasourceImpl implements AuthDatasource {
   Future<bool> loginAnonymous(String name) async {
     var response = await session.supabase.client.auth.signInAnonymously(
       data: {
-        'name': 'testando',
+        'name': name != '' ? name : '[anonymous]',
+        'photo': 'https://gvnetwokeiwfqqtkvsae.supabase.co/storage/v1/object/public/images/guest_user.png',
       },
     );
     log(response.toString());

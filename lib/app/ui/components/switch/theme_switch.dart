@@ -38,11 +38,11 @@ class _ThemeSwitchState extends State<ThemeSwitch> {
   Widget build(BuildContext context) {
     return ThemeSwitcher.switcher(
       builder: (context, switcher) => GestureDetector(
-        onTap: () {
+        onTap: () async {
           switcher.changeTheme(
             theme: AppTheme().themeMode.value == ThemeMode.dark ? AppTheme.light : AppTheme.dark,
           );
-          AppTheme().invertThemeMode();
+          await AppTheme().invertThemeMode();
         },
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 500),

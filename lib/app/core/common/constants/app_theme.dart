@@ -4,6 +4,7 @@ import 'package:tictactoe/app/core/common/constants/app_colors.dart';
 import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
 import 'package:tictactoe/app/core/common/extensions/color_extension.dart';
 import 'package:tictactoe/app/core/common/utils/overlay_ui_utils.dart';
+import 'package:tictactoe/main.dart';
 
 /// > A class that contains all the colors used in the app
 class AppTheme {
@@ -13,9 +14,24 @@ class AppTheme {
   factory AppTheme() => AppTheme._instance;
   //
 
-  final themeMode = ThemeMode.dark.toSignal();
-  void invertThemeMode() {
+  late Signal<ThemeMode> themeMode;
+  void init() {
+    var value = session.prefs.getBoolean('theme');
+
+    if (value == null) {
+      themeMode = ThemeMode.dark.toSignal();
+      return;
+    }
+    if (value == true) {
+      themeMode = ThemeMode.dark.toSignal();
+      return;
+    }
+    themeMode = ThemeMode.light.toSignal();
+  }
+
+  Future invertThemeMode() async {
     themeMode.value = themeMode.value == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
+    await session.prefs.setBoolean('theme', themeMode.value == ThemeMode.dark);
     OverlayUIUtils.setOverlayStyle(barDark: themeMode.value != ThemeMode.dark);
   }
 
@@ -34,6 +50,7 @@ class AppTheme {
           displayLarge: TextStyle(color: AppColors.grey_300, letterSpacing: 0.4),
           displayMedium: TextStyle(color: AppColors.grey_300, letterSpacing: 0.4),
           bodyMedium: TextStyle(color: AppColors.grey_300, letterSpacing: 0.4),
+          bodySmall: TextStyle(color: AppColors.grey_400, letterSpacing: 0.4),
         ),
         iconTheme: const IconThemeData(
           color: AppColors.grey_200,
@@ -76,7 +93,7 @@ class AppTheme {
           hintStyle: const TextStyle(
             color: AppColors.grey_500,
             fontSize: 16,
-            fontWeight: AppFonts.normal,
+            fontWeight: AppFonts.semiBold,
           ),
           border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -144,7 +161,8 @@ class AppTheme {
           titleSmall: TextStyle(color: AppColors.grey_700, fontWeight: AppFonts.normal),
           displayLarge: TextStyle(color: AppColors.grey_700, letterSpacing: 0.4),
           displayMedium: TextStyle(color: AppColors.grey_700, letterSpacing: 0.4),
-          bodyMedium: TextStyle(color: AppColors.grey_600, letterSpacing: 0.4),
+          bodyMedium: TextStyle(color: AppColors.grey_700, letterSpacing: 0.4),
+          bodySmall: TextStyle(color: AppColors.grey_600, letterSpacing: 0.4),
         ),
         iconTheme: const IconThemeData(
           color: AppColors.grey_700,
@@ -185,9 +203,9 @@ class AppTheme {
             fontWeight: AppFonts.bold,
           ),
           hintStyle: const TextStyle(
-            color: AppColors.grey_500,
+            color: AppColors.grey_300,
             fontSize: 16,
-            fontWeight: AppFonts.normal,
+            fontWeight: AppFonts.semiBold,
           ),
           border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10)),

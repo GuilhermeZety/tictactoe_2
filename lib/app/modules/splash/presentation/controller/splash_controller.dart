@@ -5,7 +5,7 @@ import 'package:tictactoe/main.dart';
 
 class SplashController {
   Future<void> init() async {
-    // await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 1));
     if (await Modular.get<ConnectionService>().isConnected) {
       if (session.user == null) {
         Modular.to.navigate(AppRoutes.auth);

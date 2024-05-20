@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:gap/gap.dart';
 import 'package:tictactoe/app/core/common/constants/app_routes.dart';
+import 'package:tictactoe/app/core/common/extensions/locale_extension.dart';
 import 'package:tictactoe/app/ui/components/button.dart';
+import 'package:tictactoe/app/ui/components/image_cached.dart';
 import 'package:tictactoe/main.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,6 +22,14 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            ImageCached(
+              url: session.user!.userMetadata!['photo'] as String,
+              radius: 1000,
+              width: 100,
+            ),
+            const Gap(20),
+            Text((session.user!.userMetadata!['name'] as String).t),
+            const Gap(20),
             Button(
               onPressed: () async {
                 session.supabase.client.auth.signOut();
