@@ -7,5 +7,6 @@
     "account": "cuenta",
     "guest": "invitado",
     "access_with": "acceso con",
-    "access_with_guest": "acceder como invitado"
+    "access_with_guest": "acceder como invitado",
+    "back": "volver"
 }

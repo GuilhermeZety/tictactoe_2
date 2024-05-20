@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:tictactoe/app/core/common/constants/app_colors.dart';
 import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
+import 'package:tictactoe/app/core/common/extensions/context_extension.dart';
 import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 
 class Input extends StatefulWidget {
@@ -20,7 +21,6 @@ class Input extends StatefulWidget {
   final int? maxLength;
   final bool readOnly;
   final bool showError;
-  final bool transparent;
   final Function(String?)? onChange;
   final Function(String?)? onSubmitted;
   final Function()? onTap;
@@ -43,7 +43,6 @@ class Input extends StatefulWidget {
     this.maxLength,
     this.readOnly = false,
     this.showError = true,
-    this.transparent = false,
     this.onTap,
     this.onChange,
     this.focusNode,
@@ -67,7 +66,6 @@ class Input extends StatefulWidget {
     this.maxLength,
     this.readOnly = false,
     this.showError = true,
-    this.transparent = false,
     this.onTap,
     this.onChange,
     this.focusNode,
@@ -91,7 +89,6 @@ class Input extends StatefulWidget {
     this.maxLength,
     this.readOnly = false,
     this.showError = true,
-    this.transparent = false,
     this.onTap,
     this.onChange,
     this.focusNode,
@@ -149,7 +146,8 @@ class _InputState extends State<Input> {
                 widget.label!,
                 style: TextStyle(
                   fontWeight: AppFonts.bold,
-                  color: widget.transparent ? AppColors.white : AppColors.grey_600,
+                  color: context.textTheme.titleMedium?.color,
+                  fontSize: 16,
                 ),
               ),
               const Gap(5),
@@ -175,39 +173,20 @@ class _InputState extends State<Input> {
               onTap: widget.onTap,
               focusNode: widget.focusNode ?? (widget.readOnly ? FocusNode(canRequestFocus: false) : null),
               style: TextStyle(
-                color: widget.transparent
-                    ? AppColors.white
-                    : widget.readOnly
-                        ? AppColors.grey_300.withOpacity(0.8)
-                        : AppColors.grey_600.withOpacity(0.8),
+                color: context.textTheme.titleLarge?.color,
                 fontSize: 18,
               ),
               decoration: InputDecoration(
                 counterText: '',
                 filled: true,
-                focusedBorder: widget.transparent
-                    ? const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(
-                          width: 1,
-                          color: Colors.white,
-                        ),
-                      )
-                    : null,
-                hintStyle: TextStyle(
-                  color: widget.transparent ? AppColors.grey_300.withOpacity(0.5) : AppColors.grey_400,
+                hintStyle: const TextStyle(
+                  color: AppColors.grey_400,
                   fontSize: 14,
-                  fontWeight: AppFonts.normal,
+                  fontWeight: AppFonts.semiBold,
                 ),
-                fillColor: widget.transparent ? AppColors.white.withOpacity(0.1) : AppColors.grey_100,
+                fillColor: context.theme.canvasColor,
                 suffixIcon: suffix,
                 errorMaxLines: 2,
-                errorStyle: widget.transparent
-                    ? const TextStyle(
-                        fontWeight: AppFonts.bold,
-                        color: AppColors.error,
-                      )
-                    : null,
                 prefixIconConstraints: widget.prefixWidth != null ? BoxConstraints(minWidth: widget.prefixWidth!) : null,
                 prefixIcon: widget.prefixIcon,
                 hintText: widget.hint,
@@ -221,8 +200,8 @@ class _InputState extends State<Input> {
                   children: [
                     Text(
                       '${snapshot.data?.length ?? 0}/${widget.maxLength}',
-                      style: TextStyle(
-                        color: widget.transparent ? AppColors.grey_300 : AppColors.grey_600,
+                      style: const TextStyle(
+                        color: AppColors.grey_600,
                         fontSize: 12,
                         fontWeight: AppFonts.bold,
                       ),

@@ -7,10 +7,21 @@ import 'package:gap/gap.dart';
 import 'package:tictactoe/app/core/common/constants/app_colors.dart';
 import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
 import 'package:tictactoe/app/core/common/extensions/context_extension.dart';
+import 'package:tictactoe/app/core/common/extensions/locale_extension.dart';
+import 'package:tictactoe/app/core/common/extensions/string_extension.dart';
 import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 
 class BackAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const BackAppBar({super.key, this.title, this.suffix, this.backAction, this.backIcon, this.backText, this.animationToTop = true, this.showBackText = false});
+  const BackAppBar({
+    super.key,
+    this.title,
+    this.suffix,
+    this.backAction,
+    this.backIcon,
+    this.backText,
+    this.animationToTop = true,
+    this.showBackText = true,
+  });
 
   final String? title;
   final Widget? suffix;
@@ -27,7 +38,6 @@ class BackAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: Stack(
         children: [
           Container(
-            color: AppColors.primary,
             width: context.width,
           ).animate().slideY(begin: animationToTop ? 0.05 : -0.05, end: 0),
           Positioned(
@@ -50,7 +60,6 @@ class BackAppBar extends StatelessWidget implements PreferredSizeWidget {
                       backIcon ??
                           const Icon(
                             Icons.keyboard_arrow_left_rounded,
-                            color: AppColors.white,
                             size: 30,
                           ),
                       const Gap(5),
@@ -58,11 +67,10 @@ class BackAppBar extends StatelessWidget implements PreferredSizeWidget {
                         Material(
                           color: Colors.transparent,
                           child: Text(
-                            backText ?? 'Voltar',
+                            backText ?? 'back'.t.capitalize(),
                             style: const TextStyle(
                               fontSize: 13,
                               fontWeight: AppFonts.bold,
-                              color: AppColors.grey_100,
                             ),
                           ),
                         ),

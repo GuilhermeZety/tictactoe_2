@@ -7,5 +7,6 @@
     "account": "account",
     "guest": "guest",
     "access_with": "access with",
-    "access_with_guest": "access as guest"
+    "access_with_guest": "access as guest",
+    "back": "back"
 }

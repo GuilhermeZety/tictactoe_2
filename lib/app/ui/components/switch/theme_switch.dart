@@ -40,7 +40,7 @@ class _ThemeSwitchState extends State<ThemeSwitch> {
       builder: (context, switcher) => GestureDetector(
         onTap: () {
           switcher.changeTheme(
-            theme: AppTheme().themeMode.value == ThemeMode.dark ? ThemeData.light() : AppTheme.dark,
+            theme: AppTheme().themeMode.value == ThemeMode.dark ? AppTheme.light : AppTheme.dark,
           );
           AppTheme().invertThemeMode();
         },

@@ -2,10 +2,12 @@ import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flextras/flextras.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:gap/gap.dart';
 import 'package:signals/signals_flutter.dart';
 import 'package:tictactoe/app/core/common/constants/app_colors.dart';
 import 'package:tictactoe/app/core/common/constants/app_fonts.dart';
+import 'package:tictactoe/app/core/common/constants/app_routes.dart';
 import 'package:tictactoe/app/core/common/constants/app_theme.dart';
 import 'package:tictactoe/app/core/common/extensions/context_extension.dart';
 import 'package:tictactoe/app/core/common/extensions/locale_extension.dart';
@@ -106,54 +108,48 @@ class _AuthPageState extends State<AuthPage> {
                 ),
               ],
             ).animate().slideFade(false, active: firstEntry, delay: 300.ms),
-            GestureDetector(
-              onTap: () async {
-                // await GuestAcessModal.show(context);
-                // var response = await Modular.get<LoginAnonymous>()(NoParams());
-
-                // response.fold(
-                //   (left) => Toasting.error(context, title: left.message),
-                //   (right) {
-                //     Toasting.success(context, title: 'login_success'.t);
-                //     Modular.to.pushNamedAndRemoveUntil(AppRoutes.splash, (route) => false);
-                //   },
-                // );
-              },
-              child: SeparatedColumn(
-                separatorBuilder: () => const Gap(12),
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '${'access_with'.t.capitalize()}:',
-                    style: const TextStyle(
-                      fontWeight: AppFonts.semiBold,
-                    ),
-                  ).pBottom(4).slideFade(true, active: firstEntry, delay: 600.ms),
-                  AuthButton.google(
-                    onPressed: () async {
-                      //
-                    },
-                  ).expandedH().slideFade(true, active: firstEntry, delay: 600.ms),
-                  AuthButton.discord(
-                    onPressed: () async {
-                      //
-                    },
-                  ).expandedH().slideFade(true, active: firstEntry, delay: 700.ms),
-                  AuthButton.github(
-                    onPressed: () async {
-                      //
-                    },
-                  ).expandedH().slideFade(true, active: firstEntry, delay: 800.ms),
-                  const Gap(0),
-                  Text(
-                    'access_with_guest'.t.capitalize(),
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontWeight: AppFonts.semiBold,
-                    ),
-                  ).expandedH().slideFade(true, active: firstEntry, delay: 1000.ms),
-                ],
-              ),
+            SeparatedColumn(
+              separatorBuilder: () => const Gap(12),
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '${'access_with'.t.capitalize()}:',
+                  style: const TextStyle(
+                    fontWeight: AppFonts.semiBold,
+                  ),
+                ).pBottom(4).slideFade(true, active: firstEntry, delay: 600.ms),
+                AuthButton.google(
+                  onPressed: () async {
+                    //
+                  },
+                ).expandedH().slideFade(true, active: firstEntry, delay: 600.ms),
+                AuthButton.discord(
+                  onPressed: () async {
+                    //
+                  },
+                ).expandedH().slideFade(true, active: firstEntry, delay: 700.ms),
+                AuthButton.github(
+                  onPressed: () async {
+                    //
+                  },
+                ).expandedH().slideFade(true, active: firstEntry, delay: 800.ms),
+                const Gap(0),
+                GestureDetector(
+                  onTap: () async {
+                    Modular.to.pushNamed(AppRoutes.authGuest);
+                  },
+                  child: Container(
+                    color: Colors.transparent,
+                    child: Text(
+                      'access_with_guest'.t.capitalize(),
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontWeight: AppFonts.semiBold,
+                      ),
+                    ).expandedH().slideFade(true, active: firstEntry, delay: 1000.ms),
+                  ),
+                ),
+              ],
             ),
           ],
         ).p(32).pTop(context.mq.padding.top).pBottom(context.mq.padding.bottom),
