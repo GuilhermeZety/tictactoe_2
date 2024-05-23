@@ -179,11 +179,6 @@ class _InputState extends State<Input> {
               decoration: InputDecoration(
                 counterText: '',
                 filled: true,
-                hintStyle: const TextStyle(
-                  color: AppColors.grey_400,
-                  fontSize: 14,
-                  fontWeight: AppFonts.semiBold,
-                ),
                 fillColor: context.theme.canvasColor,
                 suffixIcon: suffix,
                 errorMaxLines: 2,

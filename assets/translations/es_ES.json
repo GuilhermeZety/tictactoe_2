@@ -1,4 +1,5 @@
 {    
+    "[anonymous]": "Anónimo",
     "developed_by": "Desarrollado por",
     "wellcome": "¡Bienvenido!",
     "auth_before_1": "Antes de jugar con un amigo",
@@ -8,5 +9,7 @@
     "guest": "invitado",
     "access_with": "acceso con",
     "access_with_guest": "acceder como invitado",
-    "back": "volver"
+    "back": "volver",
+    "guest_access": "Para acceder como invitado, ingresa tu nombre o apodo para que tu amigo pueda identificarte.",
+    "guest_access_anonymous": "si no ingresa su nombre, se establecerá en ”%s”"
 }

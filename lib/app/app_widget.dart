@@ -18,7 +18,7 @@ class AppWidget extends StatefulWidget {
 class _AppWidgetState extends State<AppWidget> with SignalsAutoDisposeMixin {
   @override
   void initState() {
-    OverlayUIUtils.setOverlayStyle(barDark: false);
+    OverlayUIUtils.setOverlayStyle(barDark: AppTheme().themeMode.value != ThemeMode.dark);
     super.initState();
   }
 
@@ -27,7 +27,7 @@ class _AppWidgetState extends State<AppWidget> with SignalsAutoDisposeMixin {
     LocalJsonLocalization.delegate.directories = ['assets/translations'];
 
     return ThemeProvider(
-      initTheme: AppTheme.dark,
+      initTheme: AppTheme().themeMode.value == ThemeMode.dark ? AppTheme.dark : AppTheme.light,
       builder: (context, myTheme) {
         return MaterialApp.router(
           title: 'Jogo da Velha',

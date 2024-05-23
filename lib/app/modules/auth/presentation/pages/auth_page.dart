@@ -14,6 +14,9 @@ import 'package:tictactoe/app/core/common/extensions/locale_extension.dart';
 import 'package:tictactoe/app/core/common/extensions/string_extension.dart';
 import 'package:tictactoe/app/core/common/extensions/widget/text_extension.dart';
 import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
+import 'package:tictactoe/app/core/common/features/usecases/usecase.dart';
+import 'package:tictactoe/app/core/common/utils/toasting.dart';
+import 'package:tictactoe/app/core/shared/features/auth/domain/usecases/login_with_google.dart';
 import 'package:tictactoe/app/core/shared/location_session.dart';
 import 'package:tictactoe/app/ui/components/auth_buttons.dart';
 import 'package:tictactoe/app/ui/components/switch/language_switch.dart';
@@ -119,9 +122,16 @@ class _AuthPageState extends State<AuthPage> {
                   ),
                 ).pBottom(4).slideFade(true, active: firstEntry, delay: 600.ms),
                 AuthButton.google(
-                  onPressed: () async {
-                    //
-                  },
+                  onPressed: () => Modular.get<LoginWithGoogle>()(NoParams()).then(
+                    (value) => value.fold(
+                      (l) => Toasting.error(context, title: l.message),
+                      (r) {
+                        if (r == true) {
+                          Modular.to.pushNamedAndRemoveUntil(AppRoutes.splash, (route) => false);
+                        }
+                      },
+                    ),
+                  ),
                 ).expandedH().slideFade(true, active: firstEntry, delay: 600.ms),
                 AuthButton.discord(
                   onPressed: () async {

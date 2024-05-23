@@ -30,6 +30,7 @@ class AuthButton extends StatelessWidget {
     return Button(
       onPressed: onPressed,
       color: type.backgroundColor,
+      inverted: type.loaderColor,
       prefixIcon: SvgPicture.asset(
         type.iconSVG,
         width: 24,

@@ -46,9 +46,9 @@ class Button extends StatefulWidget {
     this.prefixIcon,
     this.padding = const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
     this.disabled = false,
+    this.inverted = false,
     this.bordered = false,
   })  : secondary = false,
-        inverted = false,
         style = ButtonStyle(
           shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
@@ -289,7 +289,7 @@ class _ButtonState extends State<Button> {
         fixedSize: widget.size != null ? WidgetStateProperty.all<Size>(widget.size!) : null,
       ),
       child: isLoading
-          ? Loader(size: 16, inverted: !widget.inverted)
+          ? Loader(size: 24, inverted: !widget.inverted)
           : Row(
               mainAxisSize: widget.prefixIcon == null && widget.suffixIcon == null ? MainAxisSize.min : MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

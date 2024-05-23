@@ -1,4 +1,5 @@
 {
+    "[anonymous]": "Anonymous",
     "developed_by": "Developed by",
     "wellcome": "Welcome!",
     "auth_before_1": "Before you can play with a friend",
@@ -8,5 +9,7 @@
     "guest": "guest",
     "access_with": "access with",
     "access_with_guest": "access as guest",
-    "back": "back"
+    "back": "back",
+    "guest_access": "To access as a guest, enter your name or nickname so your friend can identify you.",
+    "guest_access_anonymous": "if you do not enter your name, it will be set to ”%s”"
 }

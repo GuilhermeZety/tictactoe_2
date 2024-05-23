@@ -23,6 +23,14 @@ enum AuthPlatform {
     };
   }
 
+  bool get loaderColor {
+    return switch (this) {
+      AuthPlatform.google => true,
+      AuthPlatform.discord => false,
+      AuthPlatform.github => false,
+    };
+  }
+
   String get iconSVG {
     return switch (this) {
       AuthPlatform.google => AppAssets.svgs.google,
