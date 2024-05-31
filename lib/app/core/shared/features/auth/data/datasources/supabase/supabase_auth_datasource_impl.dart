@@ -45,6 +45,10 @@ class SupabaseAuthDatasourceImpl implements AuthDatasource {
 
   @override
   Future<bool> loginWithDiscord() async {
+    await session.auth.signInWithOAuth(
+      OAuthProvider.discord,
+      authScreenLaunchMode: LaunchMode.externalApplication,
+    );
     return true;
   }
 

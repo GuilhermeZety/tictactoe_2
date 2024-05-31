@@ -16,6 +16,7 @@ import 'package:tictactoe/app/core/common/extensions/widget/text_extension.dart'
 import 'package:tictactoe/app/core/common/extensions/widget/widget_extension.dart';
 import 'package:tictactoe/app/core/common/features/usecases/usecase.dart';
 import 'package:tictactoe/app/core/common/utils/toasting.dart';
+import 'package:tictactoe/app/core/shared/features/auth/domain/usecases/login_with_discord.dart';
 import 'package:tictactoe/app/core/shared/features/auth/domain/usecases/login_with_google.dart';
 import 'package:tictactoe/app/core/shared/location_session.dart';
 import 'package:tictactoe/app/ui/components/auth_buttons.dart';
@@ -134,9 +135,16 @@ class _AuthPageState extends State<AuthPage> {
                   ),
                 ).expandedH().slideFade(true, active: firstEntry, delay: 600.ms),
                 AuthButton.discord(
-                  onPressed: () async {
-                    //
-                  },
+                  onPressed: () => Modular.get<LoginWithDiscord>()(NoParams()).then(
+                    (value) => value.fold(
+                      (l) => Toasting.error(context, title: l.message),
+                      (r) {
+                        if (r == true) {
+                          Modular.to.pushNamedAndRemoveUntil(AppRoutes.splash, (route) => false);
+                        }
+                      },
+                    ),
+                  ),
                 ).expandedH().slideFade(true, active: firstEntry, delay: 700.ms),
                 AuthButton.github(
                   onPressed: () async {
